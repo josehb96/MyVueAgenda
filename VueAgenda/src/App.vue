@@ -2,7 +2,12 @@
   import SearchContacts from './components/SearchContacts.vue'; 
   import ListContacts from './components/ListContacts.vue';
   
+  // 
+  import { getAllContacts } from './services/apiContacts';
+  
   const title = 'Mi Agenda - Lista de contactos'
+
+  const listContacts = getAllContacts() 
 
 </script>
 
@@ -10,6 +15,6 @@
   <div class="flex items-center flex-col p-5">
     <h1 class="text-xl m-4">{{ title }}</h1>
     <SearchContacts />
-    <ListContacts title="Lista de Resultados"/>      
+    <ListContacts title="Lista de Resultados" :listContacts="listContacts"/>     
   </div>
 </template>

@@ -5,6 +5,10 @@
             type: String,
             default: 'lista'
         },
+        listContacts: {
+            type: Array,
+            default: []
+        }
     })
 
 </script>
@@ -21,11 +25,11 @@
             <th>accion</th>
         </thead>   
         <tbody>
-            <tr v-for="n in 20">
-                <td class="p-3 border-b-2">{{ n }}</td>  
-                <td class="p-3 border-b-2">Monkey Luffy</td>
-                <td class="p-3 border-b-2">00124578</td>
-                <td class="p-3 border-b-2">reypirata@gmail.com</td>
+            <tr v-for="contact in listContacts">
+                <td class="p-3 border-b-2">{{ contact.id }}</td>
+                <td class="p-3 border-b-2">{{ contact.name }}</td>
+                <td class="p-3 border-b-2">{{ contact.phone }}</td>
+                <td class="p-3 border-b-2">{{ contact.email }}</td>
                 <td>
                     <a href="#" class="py-2 px-4 bg-purple-800 rounded-full">Editar</a>  
                 </td>

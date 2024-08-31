@@ -1,4 +1,10 @@
 <script setup>
+import ListContacts from './ListContacts.vue';
+
+
+    const props = defineProps({
+        listContacts: Array 
+    })
 
 </script>
 
