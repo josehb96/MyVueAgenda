@@ -1,11 +1,27 @@
 <script setup>
-import ListContacts from './ListContacts.vue';
 
+    // imports
+    import { reactive, ref } from 'vue'
 
+    // props
     const props = defineProps({
         listContacts: Array 
     })
 
+    // states
+    const bgBtn = ref('blue') 
+    const stylesBtn = reactive({
+        background: 'blue',
+        color: 'blank'
+    })
+
+    // methods 
+    const isFocus = () => {
+        // bgBtn.value = 'red'
+        stylesBtn.background = 'grey'
+        stylesBtn.color = 'white'
+    }
+    
 </script>
 
 <template>
@@ -13,7 +29,11 @@ import ListContacts from './ListContacts.vue';
         <input 
             type="text" 
             class="block flex-1 border-0 bg-white py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" 
-            placeholder="buscar..">
-        <button class="bg-blue-500 py-1.5 px-5">Buscar</button>
+            placeholder="buscar.."
+            @focus="isFocus">
+        <button 
+            class="bg-blue-500 py-1.5 px-5" 
+            :style="stylesBtn"
+        >Buscar</button>
     </div>
 </template>
