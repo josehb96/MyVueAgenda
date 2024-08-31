@@ -1,9 +1,17 @@
 <script setup>
 
+    const props = defineProps({
+        title: {
+            type: String,
+            default: 'lista'
+        },
+    })
+
 </script>
 
 <template>
     <div class="m-6">
+    <h3 class="text-xl my-3">{{ title }}</h3>
       <table class="table-fixed">
         <thead>
             <th>Foto</th>   

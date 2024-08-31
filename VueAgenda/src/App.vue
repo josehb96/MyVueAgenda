@@ -10,6 +10,6 @@
   <div class="flex items-center flex-col p-5">
     <h1 class="text-xl m-4">{{ title }}</h1>
     <SearchContacts />
-    <ListContacts />      
+    <ListContacts title="Lista de Resultados"/>      
   </div>
 </template>
