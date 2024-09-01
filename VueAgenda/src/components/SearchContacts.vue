@@ -5,7 +5,8 @@
 
     // props
     const props = defineProps({
-        listContacts: Array 
+        listContacts: Array,
+        setFunction: Function 
     })
 
     // states
@@ -21,6 +22,10 @@
         stylesBtn.background = 'grey'
         stylesBtn.color = 'white'
     }
+   
+    const filtrarLista = () => {
+        props.setFunction() // Ejecutamos una función que se está enviando desde el componente padre
+    } 
     
 </script>
 
@@ -34,6 +39,7 @@
         <button 
             class="bg-blue-500 py-1.5 px-5" 
             :style="stylesBtn"
+            @click="filtrarLista"
         >Buscar</button>
     </div>
 </template>

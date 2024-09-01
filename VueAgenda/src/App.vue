@@ -21,7 +21,7 @@ import { list } from 'postcss';
 <template>
   <div class="flex items-center flex-col p-5">
     <h1 class="text-xl m-4">{{ title }}</h1>
-    <SearchContacts listContacsts="listContacts"/>
+    <SearchContacts :listContacts="listContacts" :setFunction="clearList"/>
     <ListContacts title="Lista de Resultados" :listContacts="listContacts"/>     
 
     <div>
