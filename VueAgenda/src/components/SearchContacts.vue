@@ -16,6 +16,8 @@
         color: 'blank'
     })
 
+    const kword = ref('') 
+
     // methods 
     const isFocus = () => {
         // bgBtn.value = 'red'
