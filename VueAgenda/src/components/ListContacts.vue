@@ -1,5 +1,7 @@
 <script setup>
 
+    import { computed } from 'vue';
+
     // imports
     import BtnDelete from './BtnDelete.vue';
 
@@ -15,13 +17,26 @@
         }
     })
 
+    // methods
+    const totalRecompensa = computed(() => {
+        return props.listContacts.reduce(
+            (accumulator, contact) => accumulator + contact.recompensa, 0 
+        ) 
+    })
+    
+    // const totalRecompensas = () => {
+    //     return props.listContacts.reduce(
+    //         (accumulator, contact) => accumulator + contact.recompensa, 0 
+    //     ) 
+    // }    
+
 </script>
 
 <template>
     <div class="m-6">
-    <h3 class="text-xl my-3">{{ title }}</h3>
+    <h3 class="text-xl my-3">{{ title }} - {{ totalRecompensa }}</h3>
       <table class="table-fixed">
-        <thead>
+        <thead> 
             <th>Foto</th>   
             <th>Nombres</th>   
             <th>numero</th>   
