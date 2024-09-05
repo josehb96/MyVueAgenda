@@ -3,6 +3,7 @@
     import { computed } from 'vue';
 
     // imports
+    import { contactList } from '../composables/useListContacts';
     import BtnDelete from './BtnDelete.vue';
 
     // props 
@@ -10,16 +11,12 @@
         title: {
             type: String,
             default: 'lista'
-        },
-        listContacts: {
-            type: Array,
-            default: []
         }
     })
 
     // methods
     const totalRecompensa = computed(() => {
-        return props.listContacts.reduce(
+        return contactList.value.reduce(
             (accumulator, contact) => accumulator + contact.recompensa, 0 
         ) 
     })
@@ -44,7 +41,7 @@
             <th>accion</th>
         </thead>   
         <tbody>
-            <tr v-for="contact in listContacts">
+            <tr v-for="contact in contactList">
                 <td class="p-3 border-b-2">{{ contact.id }}</td>
                 <td class="p-3 border-b-2">{{ contact.name }}</td>
                 <td class="p-3 border-b-2">{{ contact.phone }}</td>

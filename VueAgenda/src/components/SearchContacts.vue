@@ -2,11 +2,9 @@
 
     // imports
     import { reactive, ref } from 'vue'
-
-    // props
-    const props = defineProps({
-        listContacts: Array
-    })
+    
+    //
+    import { contactList } from '../composables/useListContacts';
 
     // emits
     const emit = defineEmits(['filterContact'])    
