@@ -5,8 +5,11 @@
   
   // 
   import { getAllContacts } from './services/apiContacts';
-  import { contactList } from './composables/useListContacts';
-
+  // import { contactList } from './composables/useListContacts';
+  import { useListContacts } from './composables/useListContacts';
+ 
+  // states 
+  const { contactList } = useListContacts()
   
   // let listContacts = getAllContacts()
   // const listContacts = ref(getAllContacts()) // Ahora esta variable se ha convertido en un estado de Vue al usar la directiva ref

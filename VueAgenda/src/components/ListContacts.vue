@@ -1,9 +1,10 @@
 <script setup>
 
-    import { computed } from 'vue';
+    import { computed, watch, watchEffect } from 'vue';
 
     // imports
-    import { contactList } from '../composables/useListContacts';
+    // import { contactList } from '../composables/useListContacts';
+    import { useListContacts } from '../composables/useListContacts';
     import BtnDelete from './BtnDelete.vue';
 
     // props 
@@ -13,6 +14,23 @@
             default: 'lista'
         }
     })
+
+    // state composables
+    const { contactList, msjEmpy, showEmpy } = useListContacts() // Se crea una copia sólamente para el ámbito de este componente
+
+    // watchers
+    // En el primer parámetro indicamos qué estado queremos observar
+    // watch(contactList, (newValue, oldValue) => { // Pasamos al callback el valor nuevo y el valor antes de ser mutado
+    //     console.log(newValue, oldValue) 
+    //     showEmpy('No se encontraron resultados')
+    // })
+    
+    // Dentro de este callback, watchEffect está atento a verificar qué estados hay dentro de esta lógica 
+    watchEffect(() => {
+        console.log(contactList.value)
+        showEmpy('No se encontraron resultados')
+        // Si aquí escribieramos la lógica para otros estados también las observaría
+    })    
 
     // methods
     const totalRecompensa = computed(() => {
@@ -53,5 +71,6 @@
             </tr>
         </tbody>
       </table>   
+      <p class="text-red-800">{{ msjEmpy }}</p>
     </div>
 </template>

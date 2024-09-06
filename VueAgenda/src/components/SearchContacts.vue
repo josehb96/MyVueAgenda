@@ -4,7 +4,7 @@
     import { reactive, ref } from 'vue'
     
     //
-    import { contactList } from '../composables/useListContacts';
+    import { useListContacts } from '../composables/useListContacts';
 
     // emits
     const emit = defineEmits(['filterContact'])    
@@ -18,6 +18,10 @@
 
     const kword = ref('') 
 
+    // composables
+    // De esta forma ya podemos utilizar en este componente la variable y la función definidas en el composable 
+    const { msjEmpy, showEmpy } = useListContacts() // Se crea una copia sólamente para el ámbito de este componente
+
     // methods 
     const isFocus = () => {
         // bgBtn.value = 'red'
@@ -26,6 +30,7 @@
     }
 
     const filtrarDatos = () => {
+        showEmpy('Pruebe otra palabra')
         emit('filterContact', kword.value) 
     }     
 
@@ -46,4 +51,5 @@
             @click="$emit('searchContacts')"
         >Buscar</button>
     </div>
+    <p class="text-red-500">{{ msjEmpy }}</p>
 </template>
