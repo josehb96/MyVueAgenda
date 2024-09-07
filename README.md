@@ -1,4 +1,4 @@
-# Curso de Vue 3 y Composition API - Desde Cero, completo
+# VueAgenda
 
 Este repositorio contiene el código fuente y los recursos del curso "Curso de Vue 3 y Composition API - Desde Cero, completo" creado por Neunapp en YouTube.
 
