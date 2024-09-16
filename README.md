@@ -6,6 +6,8 @@ Este repositorio contiene el código fuente y los recursos del curso "Curso de V
 
 Este curso ofrece una introducción completa a Vue 3 y la Composition API, diseñado para principiantes y desarrolladores que desean actualizar sus conocimientos. A lo largo del curso, se construye una aplicación de agenda de contactos, cubriendo conceptos fundamentales y avanzados de Vue 3.
 
+Posteriormente como tarea final, se integró Vue Router en el proyecto y se añadieron vistas junto con algunas funcionalidades nuevas.
+
 ## Contenido del curso
 
 El curso abarca los siguientes temas:
