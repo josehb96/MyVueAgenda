@@ -1,11 +1,9 @@
 <script setup>
-
+    import ListContact from '../components/ListContact.vue';
 </script>
 
 <template>
-    <div>
-
-    </div>
+    <ListContact/>
 </template>
 
 

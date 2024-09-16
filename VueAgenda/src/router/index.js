@@ -16,6 +16,14 @@ const routes = [
         meta: {
             requiresAuth: true
         }
+    },
+    {
+        path: '/see/:id',
+        name: 'see',
+        component: SeeContactView,
+        meta: {
+            requiresAuth: false
+        }
     }
 ]
 

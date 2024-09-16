@@ -56,7 +56,7 @@
     <h3 class="text-xl my-3">{{ title }} - {{ totalRecompensa }}</h3>
       <table class="table-fixed">
         <thead> 
-            <th>Foto</th>   
+            <th>Id</th>   
             <th>Nombres</th>   
             <th>numero</th>   
             <th>correo</th>   
@@ -70,6 +70,7 @@
                 <td class="p-3 border-b-2">{{ contact.email }}</td>
                 <td class="flex items-center">
                     <RouterLink :to="{ name: 'edit', params: { id: contact.id } }" class="py-2 px-4 mx-2 bg-purple-800 rounded-full">Editar</RouterLink>  
+                    <RouterLink :to="{ name: 'see', params: { id: contact.id } }" class="py-2 px-4 mx-2 bg-blue-500 rounded-full">Ver</RouterLink>
                     <BtnDelete @deleteContact="deleteOneContact(contact.id)"/>
                 </td>
             </tr>
