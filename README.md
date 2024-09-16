@@ -50,7 +50,10 @@ npm run dev
 VueAgenda/
 ├── src/
 │   ├── components/
+│   ├── composables/
 │   ├── services/
+│   ├── views/
+│   ├── router/
 │   ├── App.vue
 │   └── main.js
 ├── public/
