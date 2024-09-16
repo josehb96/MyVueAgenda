@@ -45,6 +45,12 @@
     //     ) 
     // }    
 
+    const deleteOneContact = (id) => {
+        contactList.value = contactList.value.filter(
+            contact => contact.id !== id
+        )
+    } 
+
 </script>
 
 <template>
@@ -66,7 +72,7 @@
                 <td class="p-3 border-b-2">{{ contact.email }}</td>
                 <td class="flex items-center">
                     <a href="#" class="py-2 px-4 mx-2 bg-purple-800 rounded-full">Editar</a>  
-                    <BtnDelete />
+                    <BtnDelete @deleteContact="deleteOneContact(contact.id)"/>
                 </td>
             </tr>
         </tbody>
