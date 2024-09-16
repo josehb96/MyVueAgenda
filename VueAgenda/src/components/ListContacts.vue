@@ -1,9 +1,7 @@
 <script setup>
 
     import { computed, watch, watchEffect } from 'vue';
-
-    // imports
-    // import { contactList } from '../composables/useListContacts';
+    import { RouterLink } from 'vue-router';
     import { useListContacts } from '../composables/useListContacts';
     import BtnDelete from './BtnDelete.vue';
 
@@ -71,7 +69,7 @@
                 <td class="p-3 border-b-2">{{ contact.phone }}</td>
                 <td class="p-3 border-b-2">{{ contact.email }}</td>
                 <td class="flex items-center">
-                    <a href="#" class="py-2 px-4 mx-2 bg-purple-800 rounded-full">Editar</a>  
+                    <RouterLink :to="{ name: 'edit', params: { id: contact.id } }" class="py-2 px-4 mx-2 bg-purple-800 rounded-full">Editar</RouterLink>  
                     <BtnDelete @deleteContact="deleteOneContact(contact.id)"/>
                 </td>
             </tr>

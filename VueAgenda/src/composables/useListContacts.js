@@ -22,6 +22,6 @@ export function useListContacts() {
         contactList,
         msjEmpy,
         showEmpy
-    }    
+    }   
 
 }

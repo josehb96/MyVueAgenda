@@ -1,11 +1,9 @@
 <script setup>
-
+    import EditContactForm from '../components/EditContactForm.vue';
 </script>
 
 <template>
-    <div>
-
-    </div>
+    <EditContactForm/>
 </template>
 
 
